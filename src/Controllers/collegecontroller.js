@@ -6,11 +6,14 @@ const {validName,validfullname,validlogolink} = require('../validations/Regex_va
 //---------------------------------------------Create a college-------------------------------------------------------------------//
 
 const createcollege = async function(req,res){
+
+    res.setHeader('Access-Control-Allow-Origin','*')
+    
 try {
     
     let data = req.body
     let {name,fullName,logoLink} = data
-    if (Object.keys(req.body).length == 0){return res.status(400).send({status:false ,msg: "empty req"})}
+    if (Object.keys(req.body).length == 0){return res.status(400).send({status:false ,msg: "give something in inpput"})}
 
     if (!name) {return res.status(400).send({status:false,msg:"Enter a name"})}
     if (!fullName) { return res.status(400).send({status:false,msg:"Enter a fullname"})}
@@ -40,6 +43,8 @@ try {
 
 
 const getcollege = async function(req,res){
+
+    res.setHeader('Access-Control-Allow-Origin','*')
 
    try {
 

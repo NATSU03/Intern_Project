@@ -5,6 +5,8 @@ const {validName,validmobile,validemail} = require("../validations/Regex_validat
 //----------------------------------------------Create Intern-----------------------------------------------
 
 const createintern = async function(req,res){
+    
+    res.setHeader('Access-Control-Allow-Origin','*')
 
     try {
         
